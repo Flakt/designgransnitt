@@ -6,7 +6,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat215.lab1.Model;
 
 public class AddressBook extends Application {
     
@@ -21,6 +23,7 @@ public class AddressBook extends Application {
         
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
+        stage.getIcons().add(new Image("addressbook/resources/frameIcon32.gif"));
         stage.show();
     }
 
@@ -29,6 +32,12 @@ public class AddressBook extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Model.getInstance().shutDown();
+            }
+        }));
     }
     
 }
