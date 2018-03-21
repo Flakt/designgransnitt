@@ -43,6 +43,7 @@ public class AddressBookController implements Initializable {
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                presenter.contactsListChanged();
 
             }
         });

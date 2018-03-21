@@ -19,7 +19,7 @@
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../New16.gif" />
+                              <Image url="@resources/New16.gif" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -31,10 +31,13 @@
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Delete16.gif" />
+                              <Image url="@resources/Delete16.gif" />
                            </image>
                         </ImageView>
                      </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem mnemonicParsing="false" onAction="#closeApplicationActionPerformed" text="%exitApplicationMenuItem.text" />
@@ -53,7 +56,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../New24.gif" />
+                        <Image url="@resources/New24.gif" />
                      </image>
                   </ImageView>
                </graphic>
@@ -65,7 +68,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../Delete24.gif" />
+                        <Image url="@resources/Delete24.gif" />
                      </image>
                   </ImageView>
                </graphic>
