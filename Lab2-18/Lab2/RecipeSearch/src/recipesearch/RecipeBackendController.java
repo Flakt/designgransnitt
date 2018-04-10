@@ -29,6 +29,11 @@ public class RecipeBackendController implements Initializable {
         allowedCuisines.addAll(Arrays.asList("Sverige","Grekland","Italien","Asien","Afrika","Frankrike"));
         allowedMainIngredient.addAll(Arrays.asList("Kött","Fisk","Kyckling","Vegetarisk"));
         allowedDifficulties.addAll(Arrays.asList("Lätt","Mellan","Svår"));
+        this.setDifficulty("Lätt");
+        this.setMaxTime(0);
+        this.setCuisine("Sverige");
+        this.setMaxPrice(0);
+        this.setMainIngredient("null");
 
     }
 
