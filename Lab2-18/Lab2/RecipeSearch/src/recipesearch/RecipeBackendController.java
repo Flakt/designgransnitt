@@ -18,22 +18,16 @@ public class RecipeBackendController implements Initializable {
     private String difficulty;
     private int maxPrice;
     private int maxTime;
-    private List<String>allowedCuisines = new ArrayList<>();
-    private List<String>allowedMainIngredient = new ArrayList<>();
-    private List<String>allowedDifficulties = new ArrayList<>();
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         db = RecipeDatabase.getSharedInstance();
-        allowedCuisines.addAll(Arrays.asList("Sverige","Grekland","Italien","Asien","Afrika","Frankrike"));
-        allowedMainIngredient.addAll(Arrays.asList("Kött","Fisk","Kyckling","Vegetarisk"));
-        allowedDifficulties.addAll(Arrays.asList("Lätt","Mellan","Svår"));
-        this.setDifficulty("Lätt");
-        this.setMaxTime(0);
-        this.setCuisine("Sverige");
-        this.setMaxPrice(0);
-        this.setMainIngredient("null");
+        this.cuisine = null;
+        this.mainIngredient = null;
+        this.difficulty = null;
+        this.maxPrice = 0;
+        this.maxTime = 0;
 
     }
 
@@ -42,48 +36,23 @@ public class RecipeBackendController implements Initializable {
     }
 
     public void setCuisine(String cuisine) {
-        if (allowedCuisines.contains(cuisine)) {
-            this.cuisine = cuisine;
-        }
-        else {
-            this.cuisine = "null";
-        }
+        this.cuisine = cuisine;
     }
 
     public void setMainIngredient(String mainIngredient) {
-        if (allowedMainIngredient.contains(mainIngredient)) {
-            this.mainIngredient = mainIngredient;
-        }
-        else {
-            this.mainIngredient = "null";
-        }
+        this.mainIngredient = mainIngredient;
     }
 
     public void setDifficulty(String difficulty) {
-        if (allowedDifficulties.contains(difficulty)) {
-            this.difficulty = difficulty;
-        }
-        else {
-            this.difficulty = "null";
-        }
+        this.difficulty = difficulty;
     }
 
     public void setMaxPrice(int maxPrice) {
-        if (maxPrice > 0) {
-            this.maxPrice = maxPrice;
-        }
-        else {
-            this.maxPrice = 0;
-        }
+        this.maxPrice = maxPrice;
     }
 
     public void setMaxTime(int maxTime) {
-        if (maxTime <= 150 && maxTime % 10 == 0) {
-            this.maxTime = maxTime;
-        }
-        else {
-            this.maxTime = 0;
-        }
+        this.maxTime = maxTime;
     }
 
 
