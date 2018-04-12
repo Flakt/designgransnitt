@@ -2,12 +2,13 @@
 package recipesearch;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -16,13 +17,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
-import se.chalmers.ait.dat215.lab2.SearchFilter;
 
 
 public class RecipeSearchController implements Initializable {
 
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
-    RecipeBackendController backendController = new RecipeBackendController();
+    private RecipeBackendController backendController = new RecipeBackendController();
+    private Map<String, RecipeListItem> recipeListItemMap = new HashMap<String, RecipeListItem>();
     @FXML private AnchorPane searchPane;
     @FXML private AnchorPane recipeResultsPane;
     @FXML private AnchorPane recipeDetailPane;
@@ -47,6 +48,10 @@ public class RecipeSearchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         backendController.initialize(url, rb);
+        for (Recipe recipe : backendController.getRecipes()) {
+            RecipeListItem recipeListItem = new RecipeListItem(recipe,this);
+            recipeListItemMap.put(recipe.getName(),recipeListItem);
+        }
         this.updateRecipeList();
         mainIngredientBox.getItems().addAll("Visa Alla","Kött","Fisk","Kyckling","Vegetarisk");
         mainIngredientBox.getSelectionModel().select("Visa Alla");
@@ -122,7 +127,7 @@ public class RecipeSearchController implements Initializable {
         recipeListFlowPane.getChildren().clear();
         List<Recipe> recipes = backendController.getRecipes();
         for (Recipe recipe : recipes) {
-            RecipeListItem recipeListItem = new RecipeListItem(recipe,this);
+            RecipeListItem recipeListItem = recipeListItemMap.get(recipe.getName());
             recipeListFlowPane.getChildren().add(recipeListItem);
         }
     }
@@ -132,18 +137,16 @@ public class RecipeSearchController implements Initializable {
         recipeDetailLabel.setText(recipe.getName());
     }
 
+
     @FXML
     public void closeRecipeView() {
-        searchPane.toFront();
+        recipeSearchPane.toFront();
     }
+
 
     public void openRecipeView(Recipe recipe) {
         populateRecipeDetailView(recipe);
         recipeDetailPane.toFront();
-    }
-
-    @FXML
-    protected void onClick(Event event) {
     }
 
 }

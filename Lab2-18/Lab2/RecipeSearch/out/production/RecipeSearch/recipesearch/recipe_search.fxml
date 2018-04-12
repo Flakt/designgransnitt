@@ -15,11 +15,26 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
    <children>
       <StackPane prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <SplitPane dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
+            <AnchorPane fx:id="recipeDetailPane" prefHeight="500.0" prefWidth="391.0" style="-fx-background-color: #09CDDA;">
+               <children>
+                  <Button fx:id="recipeDetailCloseButton" mnemonicParsing="false" onAction="#closeRecipeView" onMouseClicked="#closeRecipeView" prefHeight="26.0" prefWidth="93.0" text="Stäng" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="recipeDetailLabel" layoutX="485.0" layoutY="5.0" prefHeight="19.0" prefWidth="105.0" text="Label" AnchorPane.leftAnchor="485.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="recipeDetailImage" fitHeight="150.0" fitWidth="200.0" layoutX="285.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <SplitPane fx:id="recipeSearchPane" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
               <items>
                 <AnchorPane id="searchPane" fx:id="searchPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="273.0">
                      <children>
@@ -44,9 +59,9 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                <AnchorPane id="recipeDetailPane" fx:id="recipeDetailPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane id="recipeDetailPane" fx:id="recipeResultsPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <ScrollPane fx:id="resultsPane" layoutY="-2.0" prefHeight="500.0" prefWidth="515.0">
+                        <ScrollPane fx:id="resultsPane" layoutY="-2.0" prefHeight="500.0" prefWidth="515.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <FlowPane fx:id="recipeListFlowPane" prefHeight="487.0" prefWidth="506.0" />
                            </content>
@@ -58,21 +73,6 @@
                   <Insets />
                </StackPane.margin>
             </SplitPane>
-            <AnchorPane prefHeight="500.0" prefWidth="391.0" style="-fx-background-image: #09CDDA;">
-               <children>
-                  <Button fx:id="recipeDetailCloseButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="93.0" text="Stäng" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="recipeDetailLabel" layoutX="485.0" layoutY="5.0" prefHeight="19.0" prefWidth="105.0" text="Label" AnchorPane.leftAnchor="485.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="recipeDetailImage" fitHeight="150.0" fitWidth="200.0" layoutX="285.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
          </children>
       </StackPane>
    </children>
