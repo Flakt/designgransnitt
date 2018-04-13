@@ -16,12 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.ait.dat215.lab2.Recipe;
-import se.chalmers.ait.dat215.lab2.RecipeDatabase;
 
 
 public class RecipeSearchController implements Initializable {
 
-    RecipeDatabase db = RecipeDatabase.getSharedInstance();
     private RecipeBackendController backendController = new RecipeBackendController();
     private Map<String, RecipeListItem> recipeListItemMap = new HashMap<String, RecipeListItem>();
     @FXML private AnchorPane searchPane;
@@ -113,10 +111,10 @@ public class RecipeSearchController implements Initializable {
         maxTimeSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                recipeTimeLabel.setText(((Integer)(int) maxTimeSlider.getValue()).toString() + "min");
                 if (newValue != null && !newValue.equals(oldValue) && !maxTimeSlider.isValueChanging()) {
                     backendController.setMaxTime(newValue.intValue());
                     updateRecipeList();
-                    recipeTimeLabel.setText(newValue.toString());
                 }
             }
         });
