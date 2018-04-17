@@ -12,10 +12,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.util.Callback;
 import se.chalmers.ait.dat215.lab2.Recipe;
+
 
 
 public class RecipeSearchController implements Initializable {
@@ -45,12 +48,26 @@ public class RecipeSearchController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        backendInitialize(url,rb);
+        mainIngredientBoxInitialize();
+        cuisineBoxInitialize();
+        toggleInitialize();
+        maxPriceSpinnerInit();
+        maxTimeSliderInit();
+        populateMainIngredientBox();
+        populateCuisineBox();
+    }
+
+    private void backendInitialize(URL url,ResourceBundle rb) {
         backendController.initialize(url, rb);
         for (Recipe recipe : backendController.getRecipes()) {
             RecipeListItem recipeListItem = new RecipeListItem(recipe,this);
             recipeListItemMap.put(recipe.getName(),recipeListItem);
         }
         this.updateRecipeList();
+    }
+
+    private void mainIngredientBoxInitialize() {
         mainIngredientBox.getItems().addAll("Visa Alla","Kött","Fisk","Kyckling","Vegetarisk");
         mainIngredientBox.getSelectionModel().select("Visa Alla");
         mainIngredientBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
@@ -61,6 +78,9 @@ public class RecipeSearchController implements Initializable {
                 updateRecipeList();
             }
         });
+    }
+
+    private void cuisineBoxInitialize() {
         cuisineBox.getItems().addAll("Visa Alla","Sverige","Grekland","Italien","Asien","Afrika","Frankrike");
         cuisineBox.getSelectionModel().select("Visa Alla");
         cuisineBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
@@ -70,6 +90,9 @@ public class RecipeSearchController implements Initializable {
                 updateRecipeList();
             }
         });
+    }
+
+    private void toggleInitialize() {
         ToggleGroup difficultyToggleGroup = new ToggleGroup();
         allDifficultyButton.setToggleGroup(difficultyToggleGroup);
         easyDifficultyButton.setToggleGroup(difficultyToggleGroup);
@@ -86,6 +109,9 @@ public class RecipeSearchController implements Initializable {
                 }
             }
         });
+    }
+
+    private void maxPriceSpinnerInit() {
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,200,0,5);
         maxPriceSpinner.setValueFactory(valueFactory);
         maxPriceSpinner.valueProperty().addListener(new ChangeListener() {
@@ -108,17 +134,19 @@ public class RecipeSearchController implements Initializable {
                 }
             }
         });
+    }
+
+    private void maxTimeSliderInit() {
         maxTimeSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                recipeTimeLabel.setText(((Integer)(int) maxTimeSlider.getValue()).toString() + "min");
+                recipeTimeLabel.setText(((Integer)(int) maxTimeSlider.getValue()).toString() + " min");
                 if (newValue != null && !newValue.equals(oldValue) && !maxTimeSlider.isValueChanging()) {
                     backendController.setMaxTime(newValue.intValue());
                     updateRecipeList();
                 }
             }
         });
-
     }
 
     private void updateRecipeList() {
@@ -145,6 +173,115 @@ public class RecipeSearchController implements Initializable {
     public void openRecipeView(Recipe recipe) {
         populateRecipeDetailView(recipe);
         recipeDetailPane.toFront();
+    }
+
+    private void populateMainIngredientBox() {
+        Callback<ListView<String>, ListCell<String>> cellFactory = new Callback<ListView<String>, ListCell<String>>() {
+            @Override
+            public ListCell<String> call(ListView<String> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item);
+                        if(item == null || empty) {
+                            setGraphic(null);
+                        }
+                        else {
+                            Image icon = null;
+                            String iconPath;
+                            try {
+                                switch (item) {
+                                    case "Kött":
+                                        iconPath = "RecipeSearch/resources/icon_main_meat.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Fisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_fish.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Kyckling":
+                                        iconPath = "RecipeSearch/resources/icon_main_chicken.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Vegetarisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_veg.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                }
+                            } catch (NullPointerException ex) {
+                                // Insert code for loading default picture here
+                            }
+                            ImageView iconImageView = new ImageView(icon);
+                            iconImageView.setFitHeight(12);
+                            iconImageView.setPreserveRatio(true);
+                            setGraphic(iconImageView);
+                        }
+                    }
+                };
+            }
+        };
+        mainIngredientBox.setButtonCell(cellFactory.call(null));
+        mainIngredientBox.setCellFactory(cellFactory);
+    }
+
+    private void populateCuisineBox() {
+        Callback<ListView<String>, ListCell<String>> cellFactory = new Callback<ListView<String>, ListCell<String>>() {
+            @Override
+            public ListCell<String> call(ListView<String> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item);
+                        if(item == null || empty) {
+                            setGraphic(null);
+                        }
+                        else {
+                            Image icon = null;
+                            String iconPath;
+                            try {
+                                switch (item) {
+                                    case "Afrika":
+                                        iconPath = "RecipeSearch/resources/icon_flag_africa.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Asien":
+                                        iconPath = "RecipeSearch/resources/icon_flag_asia.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Frankrike":
+                                        iconPath = "RecipeSearch/resources/icon_flag_france.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Grekland":
+                                        iconPath = "RecipeSearch/resources/icon_flag_greece.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Italien":
+                                        // Should be indian, probably specified wrong cuisine in previous lab assignment
+                                        iconPath = "RecipeSearch/resources/icon_flag_india.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Sverige":
+                                        iconPath = "RecipeSearch/resources/icon_flag_sweden.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                }
+                            } catch (NullPointerException ex) {
+                                // Insert code for loading default picture here
+                            }
+                            ImageView iconImageView = new ImageView(icon);
+                            iconImageView.setFitHeight(12);
+                            iconImageView.setPreserveRatio(true);
+                            setGraphic(iconImageView);
+                        }
+                    }
+                };
+            }
+        };
+        cuisineBox.setButtonCell(cellFactory.call(null));
+        cuisineBox.setCellFactory(cellFactory);
     }
 
 }
