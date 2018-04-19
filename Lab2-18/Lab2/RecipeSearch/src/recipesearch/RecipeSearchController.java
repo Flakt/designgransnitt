@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -28,6 +29,7 @@ public class RecipeSearchController implements Initializable {
     @FXML private AnchorPane searchPane;
     @FXML private AnchorPane recipeResultsPane;
     @FXML private AnchorPane recipeDetailPane;
+    @FXML private AnchorPane recipeShadowPane;
     @FXML private ScrollPane resultsPane;
     @FXML private SplitPane recipeSearchPane;
     @FXML private FlowPane recipeListFlowPane;
@@ -45,6 +47,9 @@ public class RecipeSearchController implements Initializable {
     @FXML private Label recipeDetailLabel;
     @FXML private ImageView recipeDetailImage;
     @FXML private Button recipeDetailCloseButton;
+    @FXML private ImageView recipeDetailCuisineImage;
+    @FXML private ImageView recipeDetailMainIngredientImage;
+    @FXML private ImageView recipeDetailDifficultyImage;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,6 +61,7 @@ public class RecipeSearchController implements Initializable {
         maxTimeSliderInit();
         populateMainIngredientBox();
         populateCuisineBox();
+        Platform.runLater(()->mainIngredientBox.requestFocus());
     }
 
     private void backendInitialize(URL url,ResourceBundle rb) {
@@ -161,6 +167,9 @@ public class RecipeSearchController implements Initializable {
     private void populateRecipeDetailView(Recipe recipe) {
         recipeDetailImage.setImage(recipe.getFXImage());
         recipeDetailLabel.setText(recipe.getName());
+        recipeDetailCuisineImage.setImage(getCuisineImage(recipe.getCuisine()));
+        recipeDetailMainIngredientImage.setImage(getMainIngredientImage(recipe.getMainIngredient()));
+        recipeDetailDifficultyImage.setImage(getDifficultyImage(recipe.getDifficulty()));
     }
 
 
@@ -172,6 +181,7 @@ public class RecipeSearchController implements Initializable {
 
     public void openRecipeView(Recipe recipe) {
         populateRecipeDetailView(recipe);
+        recipeShadowPane.toFront();
         recipeDetailPane.toFront();
     }
 
@@ -283,5 +293,69 @@ public class RecipeSearchController implements Initializable {
         cuisineBox.setButtonCell(cellFactory.call(null));
         cuisineBox.setCellFactory(cellFactory);
     }
+
+    public Image getCuisineImage(String cuisine) {
+        String iconPath;
+        switch (cuisine) {
+            case "Afrika":
+                iconPath = "RecipeSearch/resources/icon_flag_africa.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Asien":
+                iconPath = "RecipeSearch/resources/icon_flag_asia.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Frankrike":
+                iconPath = "RecipeSearch/resources/icon_flag_france.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Grekland":
+                iconPath = "RecipeSearch/resources/icon_flag_greece.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Italien":
+                // Should be indian, probably specified wrong cuisine in previous lab assignment
+                iconPath = "RecipeSearch/resources/icon_flag_india.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Sverige":
+                iconPath = "RecipeSearch/resources/icon_flag_sweden.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        }
+        // Should return a default image, fix later(most likely never)
+        return null;
+    }
+
+    public Image getMainIngredientImage(String mainIngredient) {
+        String iconPath;
+        switch (mainIngredient) {
+            case "Kött":
+                iconPath = "RecipeSearch/resources/icon_main_meat.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Fisk":
+                iconPath = "RecipeSearch/resources/icon_main_fish.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Kyckling":
+                iconPath = "RecipeSearch/resources/icon_main_chicken.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Vegetarisk":
+                iconPath = "RecipeSearch/resources/icon_main_veg.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        }
+        // Should return a default image, fix later(most likely never)
+        return null;
+    }
+
+    public Image getDifficultyImage(String difficulty) {
+        String iconPath;
+        switch (difficulty) {
+            case "Lätt":
+                iconPath = "RecipeSearch/resources/icon_difficulty_easy.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Mellan":
+                iconPath = "RecipeSearch/resources/icon_difficulty_medium.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+            case "Svår":
+                iconPath = "RecipeSearch/resources/icon_difficulty_hard.png";
+                return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        }
+        return null;
+    }
+
 
 }

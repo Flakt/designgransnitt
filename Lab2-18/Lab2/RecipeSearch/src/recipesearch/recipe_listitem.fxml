@@ -4,9 +4,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root fx:id="parentController" onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="parentController" onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" styleClass="recipe-list-item" stylesheets="@recipe_search.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="recipeImage" fitHeight="100.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="369.0" AnchorPane.topAnchor="0.0" />
-      <Label fx:id="recipeName" layoutX="126.0" layoutY="14.0" text="Stekta Ägg" />
+      <Label fx:id="recipeName" layoutX="126.0" layoutY="5.0" styleClass="text-larger" text="Label" />
+      <ImageView fx:id="recipeCuisineImage" fitHeight="18.0" fitWidth="28.0" layoutX="98.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="recipeMainIngredientImage" fitHeight="18.0" fitWidth="28.0" layoutX="126.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="recipeDifficultyImage" fitHeight="18.0" fitWidth="39.0" layoutX="165.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </fx:root>

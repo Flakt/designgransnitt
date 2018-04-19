@@ -13,6 +13,29 @@
     -fx-font-family: "Avenir Book";
 }
 
+.text-area {
+    -fx-background-color: -fx-background;
+}
+
+.text-area.content {
+    -fx-background-color: -fx-background;
+}
+
+.recipe-list-item {
+    -fx-border-width: 1px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+}
+
+.recipe-list-item:hover {
+    -fx-background-color: #FCFCFC;
+}
+
+.recipe-list-item:pressed {
+    -fx-background-color: #D0D0D0;
+}
+
 #logo {
     -fx-font-size: 48 px;
     -fx-font-family: "Phosphate";
@@ -23,4 +46,12 @@
     -fx-font-family: "SignPainter";
     -fx-text-fill: #FFAC33;
     -fx-rotate: -20;
+}
+
+#shadowPane {
+    -fx-background-color: #000000;
+}
+
+#detailPane {
+    -fx-background-color: #ECECEC;
 }
