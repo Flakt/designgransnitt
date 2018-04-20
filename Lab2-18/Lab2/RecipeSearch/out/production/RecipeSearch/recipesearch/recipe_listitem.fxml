@@ -11,5 +11,6 @@
       <ImageView fx:id="recipeCuisineImage" fitHeight="18.0" fitWidth="28.0" layoutX="98.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="recipeMainIngredientImage" fitHeight="18.0" fitWidth="28.0" layoutX="126.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="recipeDifficultyImage" fitHeight="18.0" fitWidth="39.0" layoutX="165.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="recipeDescription" alignment="TOP_LEFT" layoutX="130.0" layoutY="49.0" prefHeight="51.0" prefWidth="360.0" text="Label" wrapText="true" />
    </children>
 </fx:root>

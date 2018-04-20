@@ -23,7 +23,7 @@
       <file leaf-file-name="RecipeSearch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="51">
               <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -32,31 +32,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeListItem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecipeListItem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeListItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="153">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipeSearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="852">
+              <caret line="263" column="46" lean-forward="true" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#804#828#0" expanded="true" />
+                <element signature="e#7863#7864#0" expanded="true" />
+                <element signature="e#7905#7906#0" expanded="true" />
+                <element signature="e#8658#8659#0" expanded="true" />
+                <element signature="e#8689#8690#0" expanded="true" />
+                <element signature="e#8641#10966#0" expanded="true" />
+                <element signature="e#10965#10966#0" expanded="true" />
+                <element signature="e#11392#14471#0" expanded="true" />
+                <element signature="e#14470#14471#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeSearchController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java">
+      <file leaf-file-name="Recipe.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/lab2-backend.jar!/se/chalmers/ait/dat215/lab2/Recipe.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="181" column="44" selection-start-line="181" selection-start-column="44" selection-end-line="181" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#804#828#0" expanded="true" />
-                <element signature="e#7407#9732#0" expanded="true" />
-                <element signature="e#9731#9732#0" expanded="true" />
-                <element signature="e#10158#13237#0" expanded="true" />
-                <element signature="e#13236#13237#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1190">
+              <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -64,8 +74,8 @@
       <file leaf-file-name="recipe_search.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/recipesearch/recipe_search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+            <state relative-caret-position="297">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -112,10 +122,10 @@
         <option value="$PROJECT_DIR$/src/recipesearch/recipe_listitem.fxml" />
         <option value="$PROJECT_DIR$/src/recipesearch/RecipeSearch.java" />
         <option value="$PROJECT_DIR$/src/recipesearch/RecipeBackendController.java" />
-        <option value="$PROJECT_DIR$/src/recipesearch/RecipeListItem.java" />
         <option value="$PROJECT_DIR$/src/recipesearch/recipe_listitem.css" />
-        <option value="$PROJECT_DIR$/src/recipesearch/recipe_search.css" />
         <option value="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" />
+        <option value="$PROJECT_DIR$/src/recipesearch/recipe_search.css" />
+        <option value="$PROJECT_DIR$/src/recipesearch/RecipeListItem.java" />
       </list>
     </option>
   </component>
@@ -170,6 +180,13 @@
               <item name="RecipeSearch" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="recipesearch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecipeSearch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecipeSearch" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="recipesearch" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,10 +371,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -393,10 +414,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -432,10 +457,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -468,10 +497,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -497,10 +530,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -532,10 +569,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -554,10 +595,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,10 +621,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -599,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/lab2-backend.jar!/se/chalmers/ait/dat215/lab2/Recipe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -636,9 +678,16 @@
     <entry file="file://$PROJECT_DIR$/src/recipesearch/recipe_listitem.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/lab2-backend.jar!/se/chalmers/ait/dat215/lab2/Recipe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="51">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -646,35 +695,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeListItem.java">
+    <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="852">
+          <caret line="263" column="46" lean-forward="true" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#804#828#0" expanded="true" />
+            <element signature="e#7863#7864#0" expanded="true" />
+            <element signature="e#7905#7906#0" expanded="true" />
+            <element signature="e#8658#8659#0" expanded="true" />
+            <element signature="e#8689#8690#0" expanded="true" />
+            <element signature="e#8641#10966#0" expanded="true" />
+            <element signature="e#10965#10966#0" expanded="true" />
+            <element signature="e#11392#14471#0" expanded="true" />
+            <element signature="e#14470#14471#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/recipesearch/recipe_search.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        <state relative-caret-position="297">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/recipesearch/RecipeListItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="181" column="44" selection-start-line="181" selection-start-column="44" selection-end-line="181" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#804#828#0" expanded="true" />
-            <element signature="e#7407#9732#0" expanded="true" />
-            <element signature="e#9731#9732#0" expanded="true" />
-            <element signature="e#10158#13237#0" expanded="true" />
-            <element signature="e#13236#13237#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>

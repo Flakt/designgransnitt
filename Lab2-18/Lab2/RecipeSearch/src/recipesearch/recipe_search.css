@@ -1,24 +1,36 @@
 .text-normal {
     -fx-font-size: 13 px;
-    -fx-font-family: "Avenir Book";
+    -fx-font-family: "MS Sans Serif Normal";
 }
 
 .text-smaller {
     -fx-font-size: 11 px;
-    -fx-font-family: "Avenir Book";
+    -fx-font-family: "MS Sans Serif Normal";
 }
 
 .text-larger {
     -fx-font-size: 15 px;
-    -fx-font-family: "Avenir Book";
+    -fx-font-family: "MS Sans Serif Normal";
 }
 
 .text-area {
     -fx-background-color: -fx-background;
 }
 
-.text-area.content {
+.text-area .content {
     -fx-background-color: -fx-background;
+}
+
+.list-description {
+    -fx-background-color: -fx-background;
+}
+
+.list-description .content {
+    -fx-background-color: -fx-background;
+}
+
+.list-description:hover {
+    -fx-background-color: #FCFCFC;
 }
 
 .recipe-list-item {
@@ -38,12 +50,12 @@
 
 #logo {
     -fx-font-size: 48 px;
-    -fx-font-family: "Phosphate";
+    -fx-font-family: "MS Sans Serif Normal";
 }
 
 #logo-twirl {
     -fx-font-size: 64 px;
-    -fx-font-family: "SignPainter";
+    -fx-font-family: "MS Sans Serif Normal";
     -fx-text-fill: #FFAC33;
     -fx-rotate: -20;
 }
@@ -53,5 +65,5 @@
 }
 
 #detailPane {
-    -fx-background-color: #ECECEC;
+    -fx-background-color: -fx-background;
 }

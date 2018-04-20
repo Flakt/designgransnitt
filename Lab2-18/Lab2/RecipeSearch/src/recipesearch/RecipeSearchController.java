@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -42,14 +43,20 @@ public class RecipeSearchController implements Initializable {
     @FXML private RadioButton hardDifficultyButton;
     @FXML private Spinner maxPriceSpinner;
     @FXML private Slider maxTimeSlider;
-
     @FXML private Label recipeTimeLabel;
-    @FXML private Label recipeDetailLabel;
+
+    @FXML private Label recipeDetailNameLabel;
+    @FXML private Label recipeDetailTimeLabel;
+    @FXML private Label recipeDetailPriceLabel;
     @FXML private ImageView recipeDetailImage;
-    @FXML private Button recipeDetailCloseButton;
     @FXML private ImageView recipeDetailCuisineImage;
     @FXML private ImageView recipeDetailMainIngredientImage;
     @FXML private ImageView recipeDetailDifficultyImage;
+    @FXML private ImageView recipeDetailCloseImage;
+    @FXML private TextArea recipeDetailIngredientsText;
+    @FXML private TextArea recipeDetailInstructionText;
+    @FXML private TextArea recipeDetailDescripText;
+    @FXML private TextArea recipeDetailPortionsText;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -166,16 +173,61 @@ public class RecipeSearchController implements Initializable {
 
     private void populateRecipeDetailView(Recipe recipe) {
         recipeDetailImage.setImage(recipe.getFXImage());
-        recipeDetailLabel.setText(recipe.getName());
+        recipeDetailNameLabel.setText(recipe.getName());
+        recipeDetailTimeLabel.setText(intToString(recipe.getTime()) + " Min");
+        recipeDetailPriceLabel.setText(intToString(recipe.getPrice()) + " Kr");
         recipeDetailCuisineImage.setImage(getCuisineImage(recipe.getCuisine()));
         recipeDetailMainIngredientImage.setImage(getMainIngredientImage(recipe.getMainIngredient()));
         recipeDetailDifficultyImage.setImage(getDifficultyImage(recipe.getDifficulty()));
+        recipeDetailIngredientsText.setText(getIngredients(recipe));
+        recipeDetailInstructionText.setText("Tillagning:\n" + recipe.getInstruction());
+        recipeDetailDescripText.setText(recipe.getDescription());
+        recipeDetailPortionsText.setText(intToString(recipe.getServings()) + " portioner");
     }
 
+    private String getIngredients(Recipe recipe) {
+        String ingredients="";
+        for (Object ingredient : recipe.getIngredients().toArray()) {
+            ingredients = ingredients + ingredient.toString() + "\n";
+        }
+        return ingredients;
+    }
+
+    private String intToString(int toConvert) {
+        Integer integer = toConvert;
+        return integer.toString();
+    }
 
     @FXML
     public void closeRecipeView() {
         recipeSearchPane.toFront();
+    }
+
+
+    @FXML
+    public void closeButtonMouseEntered() {
+        recipeDetailCloseImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close_hover.png"
+        )));
+    }
+
+    @FXML
+    public void closeButtonMousePressed() {
+        recipeDetailCloseImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close_pressed.png"
+        )));
+    }
+
+    @FXML
+    public void closeButtonMouseExited() {
+        recipeDetailCloseImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close.png"
+        )));
+    }
+
+    @FXML
+    public void mouseTrap(Event event) {
+        event.consume();
     }
 
 
